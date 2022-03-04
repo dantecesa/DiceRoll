@@ -11,10 +11,11 @@ struct ContentView: View {
     @State var currentRoll: Roll?
     @State var rolls: [Roll] = []
 
-    @State var selectedDiceSidesIndex: Int = 1
+    @AppStorage("selectedRolls") var selectedDiceSidesIndex: Int = 1
     let possibleDiceSides: [Int] = [4, 6, 8, 10, 12, 20, 100]
     
     let fileManager = FileManager()
+    let generator = UINotificationFeedbackGenerator()
     
     var body: some View {
         GeometryReader { fullscreen in
@@ -43,6 +44,8 @@ struct ContentView: View {
                         .frame(width: fullscreen.size.width, height: fullscreen.size.height * (0.5))
                         .onTapGesture{
                             rollDice(forSides: possibleDiceSides[selectedDiceSidesIndex])
+                            
+                            generator.notificationOccurred(.success)
                         }
                     
                     Button("Roll the 🎲!") {
