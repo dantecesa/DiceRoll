@@ -10,8 +10,11 @@ import SwiftUI
 struct ContentView: View {
     @State var currentRoll: Roll?
     @State var rolls: [Roll] = []
+
     @State var selectedDiceSidesIndex: Int = 1
     let possibleDiceSides: [Int] = [4, 6, 8, 10, 12, 20, 100]
+    
+    let fileManager = FileManager()
     
     var body: some View {
         GeometryReader { fullscreen in
@@ -34,6 +37,7 @@ struct ContentView: View {
                         .overlay {
                             if let currentRoll = currentRoll {
                                 Text(String(currentRoll.sides))
+                                    .foregroundColor(.white)
                             }
                         }
                         .frame(width: fullscreen.size.width, height: fullscreen.size.height * (0.5))
@@ -49,6 +53,7 @@ struct ContentView: View {
                 .navigationTitle("DiceRoll")
             }
         }
+        .onAppear(perform: loadRolls)
     }
     
     func rollDice(forSides: Int) {
@@ -56,11 +61,20 @@ struct ContentView: View {
         
         currentRoll = newRoll
         rolls.append(newRoll)
+        saveRolls()
+    }
+    
+    func loadRolls() {
+        rolls = fileManager.loadRolls()
+    }
+    
+    func saveRolls() {
+        fileManager.saveRolls(rolls)
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(rolls: [Roll(sides: 5, dateTime: Date.now)])
     }
 }
