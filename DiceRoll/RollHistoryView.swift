@@ -8,25 +8,47 @@
 import SwiftUI
 
 struct RollHistoryView: View {
-    @Binding var rolls: [Roll]
+    @Binding var rolls: [RollResult]
     
     var body: some View {
         List {
-            ForEach(rolls) { roll in
+            ForEach(rolls) { rollResult in
                 VStack(alignment: .leading) {
-                    Text(String(roll.sides))
-                    Text(roll.dateTime.formatted(date: .abbreviated, time: .shortened))
-                        .foregroundColor(.secondary)
+                    HStack {
+                        VStack(alignment: .leading) {
+                            Text(rollResult.description)
+                                .bold()
+                            Text("\(rollResult.dateTime.formatted(date: .abbreviated, time: .shortened))")
+                                .font(.subheadline)
+                                .foregroundColor(.secondary)
+                        }
+                        Spacer()
+                        
+                        Text("\(String(rollResult.numberOfDice)) x D\(String(rollResult.numberOfDiceSides))")
+                            .font(.caption)
+                            .fontWeight(.black)
+                            .padding(8)
+                            .background(.white)
+                            .foregroundColor(.black)
+                            .shadow(radius: 10)
+                            .clipShape(Capsule())
+                    }
+                    .accessibilityElement()
+                    .accessibilityLabel("\(String(rollResult.numberOfDice)) D\(String(rollResult.numberOfDiceSides)), Results: \(rollResult.description)")
                 }
             }
             .onDelete(perform: deleteItem)
         }
-        .navigationTitle("🎲 roll history")
+        .navigationTitle("🎲 Roll History")
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button("Remove All") {
                     rolls.removeAll()
+                    let manager = FileManager()
+                    
+                    manager.saveRolls(rolls)
                 }
+                .disabled(rolls.isEmpty == true)
             }
         }
     }
@@ -38,6 +60,6 @@ struct RollHistoryView: View {
 
 struct rollHistoryView_Previews: PreviewProvider {
     static var previews: some View {
-        RollHistoryView(rolls: .constant([Roll(sides: 4, dateTime: Date.now), Roll(sides: 6, dateTime: Date.now)]))
+        RollHistoryView(rolls: .constant([RollResult(numberOfDiceSides: 6, numberOfDice: 4, dateTime: .now, rolls: [6,4])]))
     }
 }

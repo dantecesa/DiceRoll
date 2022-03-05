@@ -14,16 +14,16 @@ extension FileManager {
         return paths[0]
     }
     
-    func loadRolls() -> [Roll] {
+    func loadRolls() -> [RollResult] {
         if let data = try? Data(contentsOf: FileManager.documentsDirectory.appendingPathComponent("SavedRolls")) {
-            if let decodedRolls = try? JSONDecoder().decode([Roll].self, from: data) {
+            if let decodedRolls = try? JSONDecoder().decode([RollResult].self, from: data) {
                 return decodedRolls
             }
         }
         return []
     }
     
-    func saveRolls(_ rolls: [Roll]) {
+    func saveRolls(_ rolls: [RollResult]) {
         if let encodedRolls = try? JSONEncoder().encode(rolls) {
             do {
                 try encodedRolls.write(to: FileManager.documentsDirectory.appendingPathComponent("SavedRolls"), options: [.atomic, .completeFileProtection])

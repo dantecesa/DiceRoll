@@ -12,7 +12,7 @@
 		6BAA503C27D1BC2200C67643 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BAA503B27D1BC2200C67643 /* Assets.xcassets */; };
 		6BAA503F27D1BC2200C67643 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BAA503E27D1BC2200C67643 /* Preview Assets.xcassets */; };
 		6BAA504627D1BFEA00C67643 /* RollHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAA504527D1BFEA00C67643 /* RollHistoryView.swift */; };
-		6BAA504827D1C02D00C67643 /* Roll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAA504727D1C02D00C67643 /* Roll.swift */; };
+		6BAA504827D1C02D00C67643 /* RollResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAA504727D1C02D00C67643 /* RollResult.swift */; };
 		6BAA504A27D1C6AE00C67643 /* FileManager-DocumentsDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAA504927D1C6AE00C67643 /* FileManager-DocumentsDirectory.swift */; };
 /* End PBXBuildFile section */
 
@@ -23,7 +23,7 @@
 		6BAA503B27D1BC2200C67643 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6BAA503E27D1BC2200C67643 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6BAA504527D1BFEA00C67643 /* RollHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollHistoryView.swift; sourceTree = "<group>"; };
-		6BAA504727D1C02D00C67643 /* Roll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Roll.swift; sourceTree = "<group>"; };
+		6BAA504727D1C02D00C67643 /* RollResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollResult.swift; sourceTree = "<group>"; };
 		6BAA504927D1C6AE00C67643 /* FileManager-DocumentsDirectory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FileManager-DocumentsDirectory.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -60,7 +60,7 @@
 				6BAA503727D1BC2000C67643 /* DiceRollApp.swift */,
 				6BAA503927D1BC2000C67643 /* ContentView.swift */,
 				6BAA504527D1BFEA00C67643 /* RollHistoryView.swift */,
-				6BAA504727D1C02D00C67643 /* Roll.swift */,
+				6BAA504727D1C02D00C67643 /* RollResult.swift */,
 				6BAA504927D1C6AE00C67643 /* FileManager-DocumentsDirectory.swift */,
 				6BAA503B27D1BC2200C67643 /* Assets.xcassets */,
 				6BAA503D27D1BC2200C67643 /* Preview Content */,
@@ -149,7 +149,7 @@
 				6BAA504627D1BFEA00C67643 /* RollHistoryView.swift in Sources */,
 				6BAA504A27D1C6AE00C67643 /* FileManager-DocumentsDirectory.swift in Sources */,
 				6BAA503A27D1BC2000C67643 /* ContentView.swift in Sources */,
-				6BAA504827D1C02D00C67643 /* Roll.swift in Sources */,
+				6BAA504827D1C02D00C67643 /* RollResult.swift in Sources */,
 				6BAA503827D1BC2000C67643 /* DiceRollApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
