@@ -38,6 +38,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6B9762C927D3344300286FE6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6BAA503927D1BC2000C67643 /* ContentView.swift */,
+				6BAA504527D1BFEA00C67643 /* RollHistoryView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6B9762CA27D3344600286FE6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6BAA504727D1C02D00C67643 /* RollResult.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		6B9762CB27D3344A00286FE6 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				6BAA504927D1C6AE00C67643 /* FileManager-DocumentsDirectory.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		6BAA502B27D1BC2000C67643 = {
 			isa = PBXGroup;
 			children = (
@@ -58,10 +83,9 @@
 			isa = PBXGroup;
 			children = (
 				6BAA503727D1BC2000C67643 /* DiceRollApp.swift */,
-				6BAA503927D1BC2000C67643 /* ContentView.swift */,
-				6BAA504527D1BFEA00C67643 /* RollHistoryView.swift */,
-				6BAA504727D1C02D00C67643 /* RollResult.swift */,
-				6BAA504927D1C6AE00C67643 /* FileManager-DocumentsDirectory.swift */,
+				6B9762C927D3344300286FE6 /* Views */,
+				6B9762CA27D3344600286FE6 /* Models */,
+				6B9762CB27D3344A00286FE6 /* Helpers */,
 				6BAA503B27D1BC2200C67643 /* Assets.xcassets */,
 				6BAA503D27D1BC2200C67643 /* Preview Content */,
 			);

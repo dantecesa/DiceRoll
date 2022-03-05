@@ -35,7 +35,6 @@ struct ContentView: View {
                             Picker("🎲 number of sides", selection: $selectedDiceSides) {
                                 ForEach(possibleDiceSides, id:\.self) { diceSide in
                                     Text("D\(diceSide)")
-//                                        .accessibilityLabel(diceSide)
                                 }
                             }
                             .pickerStyle(.segmented)
